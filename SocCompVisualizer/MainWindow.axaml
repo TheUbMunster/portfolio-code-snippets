@@ -1,0 +1,24 @@
+<!--Author: Samuel Gardner-->
+
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+		xmlns:local="using:GraphsGUI"
+		xmlns:lvc="using:LiveChartsCore.SkiaSharpView.Avalonia"
+        mc:Ignorable="d" d:DesignWidth="720" d:DesignHeight="720"
+		Width="720" Height="720"
+        x:Class="GraphsGUI.MainWindow"
+        Title="GraphsGUI">
+	<Grid RowDefinitions="Auto,*,Auto">
+		<TextBlock Margin="4" Name="graphName" HorizontalAlignment="Center">Calculating Backing Data...</TextBlock>
+		<Panel Grid.Row="1" Name="contentPanel">
+			<!--Livecharts added in runtime-->
+		</Panel>
+		<Grid Grid.Row="2" ColumnDefinitions="*,*" RowDefinitions="Auto, Auto">
+			<Button Margin="4" IsEnabled="False" Name="previousButton" Grid.Column="0" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center">Previous</Button>
+			<Button Margin="4" IsEnabled="False" Name="nextButton" Grid.Column="1" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center">Next</Button>
+			<CheckBox Margin="4" Name="vertNormaliz" Grid.Row="1" Grid.ColumnSpan="2">Enable Vertical Normalization?</CheckBox>
+		</Grid>
+	</Grid>
+</Window>
