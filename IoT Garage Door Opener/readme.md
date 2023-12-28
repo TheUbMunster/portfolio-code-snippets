@@ -4,6 +4,7 @@
         <img width="80%" src="http://img.youtube.com/vi/XzvdZK8sECI/0.jpg">
     </a>
 </div>   
-
+<p>
 shows my group presentation of "upgrading" my garage door opener (in reality the system is old enough that buying new wireless
 controllers is egregiously expensive, and I don't want to pay someone 500$ to "fix" something I could do myself).
+</p>
