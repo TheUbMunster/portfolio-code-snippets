@@ -6,7 +6,9 @@ the primary levels belonging to super mario odyssey, making it themed in a minec
 and I'm quite proud of it. I'm considering making more versions for other levels within the game, but we'll see what the future holds.
 </p>
 <p align="center" width="100%">
-    <img width="80%" src="https://github.com/TheUbMunster/portfolio-code-snippets/blob/main/Super%20Minecraft%20Odyssey/smo%20mc%20compare.jpg">
+    <a href="https://gamebanana.com/mods/403565">
+        <img width="80%" src="https://github.com/TheUbMunster/portfolio-code-snippets/blob/main/Super%20Minecraft%20Odyssey/smo%20mc%20compare.jpg">
+    </a>
 </p>
 <p align="center" width="100%">
     <a href="https://gamebanana.com/mods/403565">
