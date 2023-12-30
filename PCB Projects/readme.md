@@ -7,8 +7,6 @@ To solve this problem, I designed and purchased a PCB that "rotates the socket" 
 for my printer!
 </p>
 
-<hr>
-
 <p>
 Final product: [todo]
 </p>
@@ -18,13 +16,8 @@ Final product: [todo]
 Similar to my 3D printer woes, when my second graphics card is installed in my computer case, it completely obscures all of the bottom IO, this includes the front panel connectors. Since I set up WOL,
 I am able to turn on my PC with an app on my phone, but it is annoying for the power/reset buttons/lights to not work. I tried various methods to solve this, including using some male/female ribbon cables to
 move the pins elsewhere, but the clearance is basically nonexistent with the GPU installed. I even considered bending the pins sideways by 90 degrees, but I didn't want to snap the pins by accident or ruin
-the resale value of the motherboard. To solve this, I made another adapter board that flips the header upside down, and rotates it 90 degrees so I can access it from the bottom.
-</p>
-
-<hr>
-
-<p>
-Unlike the render given by LibrePCB, the male connector will be at a right angle.
+the resale value of the motherboard. To solve this, I made another adapter board that flips the header upside down, and rotates it 90 degrees so I can access it from the bottom. Unlike this render given by 
+LibrePCB, the male connector will be at a right angle.
 </p>
 
 <p>
