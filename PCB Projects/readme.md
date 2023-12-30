@@ -6,6 +6,7 @@ To solve this problem, I designed and purchased a PCB that "rotates the socket" 
 for my printer!
 </p>
 <img align="right" width="50%" src="https://github.com/TheUbMunster/portfolio-code-snippets/blob/main/PCB%20Projects/esp%20module%20offset.png">
+<wbr>
 <p>
 Final product: [todo]
 </p>
@@ -17,6 +18,7 @@ the resale value of the motherboard. To solve this, I made another adapter board
 </p>
 <img align="left" width="50%" src="https://github.com/TheUbMunster/portfolio-code-snippets/blob/main/PCB%20Projects/motherboard%20module.png">
 <p>
+<wbr>
 Unlike the render given by LibrePCB, the male connector will be at a right angle.<br/><br/>
 Final product: [todo]
 </p>
