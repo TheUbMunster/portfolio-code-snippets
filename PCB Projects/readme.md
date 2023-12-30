@@ -5,11 +5,9 @@ in a way where it interferes with the fit of the motherboard. The module points 
 To solve this problem, I designed and purchased a PCB that "rotates the socket" of the RSP module by 90 degrees, so that it fits within the bounds of the case properly. Now I have Wifi controls
 for my printer!
 </p>
-<p align="center" width="100%">
-    <img width="80%" src="https://github.com/TheUbMunster/portfolio-code-snippets/blob/main/PCB%20Projects/esp%20module%20offset.png">
-</p>
+<img align="right" width="50%" src="https://github.com/TheUbMunster/portfolio-code-snippets/blob/main/PCB%20Projects/esp%20module%20offset.png">
 <p>
-    Final product: [todo]
+Final product: [todo]
 </p>
 <p>
 Similar to my 3D printer woes, when my second graphics card is installed in my computer case, it completely obscures all of the bottom IO, this includes the front panel connectors. Since I set up WOL,
@@ -17,12 +15,10 @@ I am able to turn on my PC with an app on my phone, but it is annoying for the p
 move the pins elsewhere, but the clearance is basically nonexistent with the GPU installed. I even considered bending the pins sideways by 90 degrees, but I didn't want to snap the pins by accident or ruin
 the resale value of the motherboard. To solve this, I made another adapter board that flips the header upside down, and rotates it 90 degrees so I can access it from the bottom.
 </p>
-<p align="center" width="100%">
-    <img width="80%" src="https://github.com/TheUbMunster/portfolio-code-snippets/blob/main/PCB%20Projects/motherboard%20module.png">
-</p>
+<img align="left" width="50%" src="https://github.com/TheUbMunster/portfolio-code-snippets/blob/main/PCB%20Projects/motherboard%20module.png">
 <p>
-    Unlike the render given by LibrePCB, the male connector will be at a right angle.<br/><br/>
-    Final product: [todo]
+Unlike the render given by LibrePCB, the male connector will be at a right angle.<br/><br/>
+Final product: [todo]
 </p>
 <p>
 The ability to create these circuit boards to solve these problems is a unique skill, and after sitting on these problems for awhile, these feel like the best solutions.
