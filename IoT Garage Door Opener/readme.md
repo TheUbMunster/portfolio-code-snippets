@@ -1,5 +1,5 @@
 # "IoT Garage Door Opener" - Group Project - ~October 2020 - C++ Arduino - [IoT Garage Door Opener.zip]()  
-<a algin="right" href="http://www.youtube.com/watch?v=XzvdZK8sECI">
+<a align="right" href="http://www.youtube.com/watch?v=XzvdZK8sECI">
     <img width="50%" src="http://img.youtube.com/vi/XzvdZK8sECI/0.jpg">
 </a>
 <p>
