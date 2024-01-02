@@ -1,4 +1,5 @@
 # "PCB Projects" - Solo Project - December 2023 - LibrePCB - [PCB Projects.zip]()
+<div>
 <img align="right" width="50%" src="https://github.com/TheUbMunster/portfolio-code-snippets/blob/main/PCB%20Projects/esp%20module%20offset.png">
 <p>
 After designing and creating the custom motherboard tray for my 3D printer, when installing the motherboard I realized that the RSP module connects to the motherboard
@@ -10,7 +11,9 @@ for my printer!
 <p>
 Final product: [todo]
 </p>
+</div>
 
+<div>
 <img align="left" width="50%" src="https://github.com/TheUbMunster/portfolio-code-snippets/blob/main/PCB%20Projects/motherboard%20module.png">
 <p>
 Similar to my 3D printer woes, when my second graphics card is installed in my computer case, it completely obscures all of the bottom IO, this includes the front panel connectors. Since I set up WOL,
@@ -23,6 +26,7 @@ LibrePCB, the male connector will be at a right angle.
 <p>
 Final product: [todo]
 </p>
+</div>
 
 <p>
 The ability to create these circuit boards to solve these problems is a unique skill, and after sitting on these problems for awhile, these feel like the best solutions.
