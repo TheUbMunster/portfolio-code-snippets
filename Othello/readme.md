@@ -1,2 +1,2 @@
-# "Othello" - Group Project - ~February 2021 - Java - [Othello.zip]()
+# "[Othello](https://github.com/TheUbMunster/portfolio-code-snippets/tree/main/Othello)" - Group Project - ~February 2021 - Java
 This was a group project I did with a classmate. I primarily did the game logic and the images, and my teammate did the UI desgin.

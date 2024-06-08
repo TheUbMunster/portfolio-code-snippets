@@ -1,3 +1,3 @@
-# "Data Visualizer" - Solo Project - December 2023 - C# Avalonia - [SocCompVisualizer.zip]()
+# "[Data Visualizer](https://github.com/TheUbMunster/portfolio-code-snippets/tree/main/SocCompVisualizer)" - Solo Project - December 2023 - C# Avalonia
 This is an application I wrote to display 120 different graphs (as opposed to handmaking them, I automated the process) for a paper that my group project and I did for CS5965 (Social Computing).
 It's written in cross-platform Avalonia, but for filesize reasons, I stripped out all non-windows libraries. Sometime in the future I plan on hosting the files better, so that you can have access to the cross-platform builds too.

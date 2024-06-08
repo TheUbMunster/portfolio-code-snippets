@@ -1,4 +1,4 @@
-# "PCB Projects" - Solo Project - December 2023 - LibrePCB - [PCB Projects.zip]()
+# "[PCB Projects](https://github.com/TheUbMunster/portfolio-code-snippets/tree/main/PCB%20Projects)" - Solo Project - December 2023 - LibrePCB
 <div style="overflow:auto;">
 <img align="right" width="50%" src="https://raw.githubusercontent.com/TheUbMunster/portfolio-code-snippets/main/PCB%20Projects/esp%20module%20offset.png">
 <p>

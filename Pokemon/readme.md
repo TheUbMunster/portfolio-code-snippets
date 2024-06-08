@@ -1,4 +1,4 @@
-# "Pokemon Executables" - Group project - ~August 2020 - C# - [Pokemon.zip]()
+# "[Pokemon Executables](https://github.com/TheUbMunster/portfolio-code-snippets/tree/main/Pokemon)" - Group project - ~August 2020 - C#
 This was a demo app I wrote that was a "proof of concept" stage along a group project I did in CSIS 2500 that allowed you to do elite
 four battles through a command line interface. Database managment, account creation, etc was included in this code (not fully secured, but I believe I mitigated
 all methods of SQL injection (not sure about protecting SQL injections performed upon the fetch of the data though)) passwords etc. were salted and hashed, but my
