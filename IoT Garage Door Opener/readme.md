@@ -1,6 +1,6 @@
 # "IoT Garage Door Opener" - Group Project - ~October 2020 - C++ Arduino - [IoT Garage Door Opener.zip]()
-<a style="overflow:auto;" align="center" href="http://www.youtube.com/watch?v=XzvdZK8sECI">
-	<img align="right" width="25%" src="http://img.youtube.com/vi/XzvdZK8sECI/0.jpg">
+<a style="overflow:auto;" href="http://www.youtube.com/watch?v=XzvdZK8sECI">
+	<img style="display:block;margin-left:auto;margin-right:auto;" width="25%" src="http://img.youtube.com/vi/XzvdZK8sECI/0.jpg">
 </a>
 <p>
 This video shows my group presentation of "upgrading" my garage door opener (in reality the system is old enough that buying new wireless
