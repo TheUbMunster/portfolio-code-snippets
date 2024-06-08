@@ -1,6 +1,6 @@
 # "PCB Projects" - Solo Project - December 2023 - LibrePCB - [PCB Projects.zip]()
 <div style="overflow:auto;">
-<img align="right" width="50%" src="https://github.com/TheUbMunster/portfolio-code-snippets/blob/main/PCB%20Projects/esp%20module%20offset.png">
+<img align="right" width="50%" src="https://raw.githubusercontent.com/TheUbMunster/portfolio-code-snippets/main/PCB%20Projects/esp%20module%20offset.png">
 <p>
 After designing and creating the custom motherboard tray for my 3D printer, when installing the motherboard I realized that the RSP module connects to the motherboard
 in a way where it interferes with the fit of the motherboard. The module points "forward" over the front of the motherboard, and overhangs slightly, causing it to interfere with the wall of the case.
@@ -14,7 +14,7 @@ Final product: [todo]
 </div>
 
 <div style="overflow:auto;">
-<img align="left" width="50%" src="https://github.com/TheUbMunster/portfolio-code-snippets/blob/main/PCB%20Projects/motherboard%20module.png">
+<img align="left" width="50%" src="https://raw.githubusercontent.com/TheUbMunster/portfolio-code-snippets/main/PCB%20Projects/motherboard%20module.png">
 <p>
 Similar to my 3D printer woes, when my second graphics card is installed in my computer case, it completely obscures all of the bottom IO, this includes the front panel connectors. Since I set up WOL,
 I am able to turn on my PC with an app on my phone, but it is annoying for the power/reset buttons/lights to not work. I tried various methods to solve this, including using some male/female ribbon cables to
