@@ -1,4 +1,4 @@
-# "Hangman Equivalency" - Solo Project - ~August 2020, January 2021 - C# F# Python Java VB C++ - [Hangman Equivalency.zip]()
+# "[Hangman Equivalency](https://github.com/TheUbMunster/portfolio-code-snippets/tree/main/Hangman%20Equivalency)" - Solo Project - ~August 2020, January 2021 - C# F# Python Java VB C++
 
 This project was originally an assignment for CSIS 2500, to introduce our coding styles to our teammates. "Make a hangman game" they said, I chose C# and wrote up
 a quick console version of hangman. As an afterthought, I decided to convert the hangman project to as many languages as I could (with the idea that it would
