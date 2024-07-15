@@ -16,6 +16,6 @@ and in most situations, tools like squarespace are the way to go), but I feel th
 
 If you're curious how it works, always remember...
 
-<p align="center" style="max-height: 50vh; height: auto; width: auto;">
-    <img src="https://raw.githubusercontent.com/TheUbMunster/portfolio-code-snippets/main/Website/internet%20tshirt.jpg"/>
+<p align="center">
+    <img style="max-height: 50vh; height: auto; width: auto;" src="https://raw.githubusercontent.com/TheUbMunster/portfolio-code-snippets/main/Website/internet%20tshirt.jpg"/>
 </p>
