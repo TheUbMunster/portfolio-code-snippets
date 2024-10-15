@@ -1,0 +1,3 @@
+# "[Recipe Book](https://github.com/TheUbMunster/portfolio-code-snippets/tree/main/Recipe%20Book)" - Solo project - ~July 2019 - C#
+My dad had a silly suggestion of writing a cooking recipe managing program. Was bored, and as a Saturday project I wrote this command line app that allows you to
+read saved recipes, enter new ones, calculate multi-batches of ingredients, and print out the recipes to your default printer.

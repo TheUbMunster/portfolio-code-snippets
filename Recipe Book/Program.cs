@@ -10,48 +10,48 @@ using System.Diagnostics;
 using System.ComponentModel;
 using System.Linq;
 
-namespace Recipie_Book
+namespace Recipe_Book
 {
    class Program
    {
-      private static List<Recipie> recipies = new List<Recipie>();
+      private static List<Recipe> recipes = new List<Recipe>();
       static void Main(string[] args)
       {
          Console.SetIn(new StreamReader(Console.OpenStandardInput(8192)));
-         LoadRecipies(ref recipies);
+         LoadRecipes(ref recipes);
          Console.WindowWidth = 204;
-         //Console.WriteLine(File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + @"\Recipies.txt"));
-         Console.WriteLine("Welcome to the Recipie Book v0.0.4! Please type either \"Read\" or \"Write\" to read your recipies, or write them respectively. Type \"Print\" to bring up the print interface. Type \"Exit\" at any time to quit.");
-      chooseReadOrWriteRecipieStart:
+         //Console.WriteLine(File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + @"\Recipes.txt"));
+         Console.WriteLine("Welcome to the Recipe Book v0.0.4! Please type either \"Read\" or \"Write\" to read your recipes, or write them respectively. Type \"Print\" to bring up the print interface. Type \"Exit\" at any time to quit.");
+      chooseReadOrWriteRecipeStart:
          switch (Console.ReadLine().ToLower())
          {
             case "read":
-               Console.WriteLine("Type \"List\" to get a list of your recipie titles in alphabetical order, \"Search\" to search for a recipie and read it, or \"Back\" to go back at any time.");
-            startOfReadRecipie:
+               Console.WriteLine("Type \"List\" to get a list of your recipe titles in alphabetical order, \"Search\" to search for a recipe and read it, or \"Back\" to go back at any time.");
+            startOfReadRecipe:
                switch (Console.ReadLine().ToLower().Trim(' '))
                {
                   case "list":
-                     if (recipies.Count == 0)
+                     if (recipes.Count == 0)
                      {
                         Console.WriteLine("No entries.");
-                        goto startOfReadRecipie;
+                        goto startOfReadRecipe;
                      }
-                     string[] ss = new string[recipies.Count];
+                     string[] ss = new string[recipes.Count];
                      for (int i = 0; i < ss.Length; i++)
                      {
-                        ss[i] = recipies[i].recipieName;
+                        ss[i] = recipes[i].recipeName;
                      }
                      ss.ToList().OrderBy(s => s).ToArray();
                      Console.WriteLine(string.Join(Environment.NewLine, ss));
-                     Console.WriteLine("Type \"List\" to get a list of your recipie titles in alphabetical order, \"Search\" to search for a recipie and read it, or \"Back\" to go back at any time.");
-                     goto startOfReadRecipie;
+                     Console.WriteLine("Type \"List\" to get a list of your recipe titles in alphabetical order, \"Search\" to search for a recipe and read it, or \"Back\" to go back at any time.");
+                     goto startOfReadRecipe;
                   case "search":
-                     Console.WriteLine("Type the name of the recipie exactally as it is spelled.");
+                     Console.WriteLine("Type the name of the recipe exactally as it is spelled.");
                      string key = Console.ReadLine().ToLower();
-                     Recipie? temp = null;
-                     foreach (Recipie thing in recipies)
+                     Recipe? temp = null;
+                     foreach (Recipe thing in recipes)
                      {
-                        if (thing.recipieName.ToLower() == key)
+                        if (thing.recipeName.ToLower() == key)
                         {
                            temp = thing;
                            break;
@@ -59,38 +59,38 @@ namespace Recipie_Book
                      }
                      if (temp != null)
                      {
-                        Console.WriteLine("Recipie found, it serves " + ((Recipie)temp).serveSize + " people by default. Type an integer multiplier to multiply the ingredients to serve more people.");
+                        Console.WriteLine("Recipe found, it serves " + ((Recipe)temp).serveSize + " people by default. Type an integer multiplier to multiply the ingredients to serve more people.");
                      askMultForRead:
                         if (!int.TryParse(Console.ReadLine(), out int res))
                         {
                            Console.WriteLine("Error: response not recognized. Type an integer value.");
                            goto askMultForRead;
                         }
-                        Console.WriteLine(DisplayRecipie((Recipie)temp, res));
-                        Console.WriteLine("Type \"List\" to get a list of your recipie titles in alphabetical order, \"Search\" to search for a recipie and read it, or \"Back\" to go back at any time.");
-                        goto startOfReadRecipie;
+                        Console.WriteLine(DisplayRecipe((Recipe)temp, res));
+                        Console.WriteLine("Type \"List\" to get a list of your recipe titles in alphabetical order, \"Search\" to search for a recipe and read it, or \"Back\" to go back at any time.");
+                        goto startOfReadRecipe;
                      }
                      else
                      {
-                        Console.WriteLine("Recipie not found. Type \"List\" to get a list of your recipie titles in alphabetical order, \"Search\" to search for a recipie and read it, or \"Back\" to go back at any time.");
-                        goto startOfReadRecipie;
+                        Console.WriteLine("Recipe not found. Type \"List\" to get a list of your recipe titles in alphabetical order, \"Search\" to search for a recipe and read it, or \"Back\" to go back at any time.");
+                        goto startOfReadRecipe;
                      }
                   case "back":
-                     Console.WriteLine("Please type either \"Read\" or \"Write\" to read your recipies, or write them respectively. Type \"Print\" to bring up the print interface. Type \"Exit\" at any time to quit.");
-                     goto chooseReadOrWriteRecipieStart;
+                     Console.WriteLine("Please type either \"Read\" or \"Write\" to read your recipes, or write them respectively. Type \"Print\" to bring up the print interface. Type \"Exit\" at any time to quit.");
+                     goto chooseReadOrWriteRecipeStart;
                   default:
                      Console.WriteLine("Error: response not recognized. Please type either \"Search\", \"Back\", or \"List\".");
-                     goto startOfReadRecipie;
+                     goto startOfReadRecipe;
                }
             case "write":
-               Recipie r = new Recipie();
-               Console.WriteLine("Create a new unique name for your recipie:");
+               Recipe r = new Recipe();
+               Console.WriteLine("Create a new unique name for your recipe:");
                {
                   string s = Console.ReadLine();
                   s = new Regex("[^a-zA-Z0-9 -]").Replace(s, "").Trim(' ').Replace(' ', '_');
-                  r.recipieName = s;
+                  r.recipeName = s;
                }
-               Console.WriteLine("The name for your new recipie is \"" + r.recipieName + "\". Now type in an integer equal to the number of ingredient sets.");
+               Console.WriteLine("The name for your new recipe is \"" + r.recipeName + "\". Now type in an integer equal to the number of ingredient sets.");
                {
                askingIngredientCount:
                   if (!int.TryParse(Console.ReadLine().Trim(' '), out int i))
@@ -208,47 +208,47 @@ namespace Recipie_Book
                         break;
                   }
                }
-               Console.WriteLine("Please type the instructions to accompany your recipie:");
+               Console.WriteLine("Please type the instructions to accompany your recipe:");
                r.instructions = Regex.Escape(Console.ReadLine().Trim(' '));
-               Console.WriteLine("Please type the amount of people this recipie serves.");
-            askRecipieServSize:
+               Console.WriteLine("Please type the amount of people this recipe serves.");
+            askRecipeServSize:
                if (!int.TryParse(Console.ReadLine().Trim(' '), out int rs))
                {
                   Console.WriteLine("Error: response not recognized. Please type an integer.");
-                  goto askRecipieServSize;
+                  goto askRecipeServSize;
                }
                r.serveSize = rs;
-               recipies.Add(r);
-               WriteRecipies(recipies);
-               LoadRecipies(ref recipies);
-               Console.WriteLine("Very good. Your new recipie \"" + r.recipieName + "\" is now saved. Type \"Read\" to read recipies, \"Write\" to write another, \"Print\" to bring up the print interface, or \"Exit\" to quit.");
-               goto chooseReadOrWriteRecipieStart;
+               recipes.Add(r);
+               WriteRecipes(recipes);
+               LoadRecipes(ref recipes);
+               Console.WriteLine("Very good. Your new recipe \"" + r.recipeName + "\" is now saved. Type \"Read\" to read recipes, \"Write\" to write another, \"Print\" to bring up the print interface, or \"Exit\" to quit.");
+               goto chooseReadOrWriteRecipeStart;
             case "print":
-               if (recipies.Count == 0)
+               if (recipes.Count == 0)
                {
                   Console.WriteLine("No entries.");
-                  goto startOfReadRecipie;
+                  goto startOfReadRecipe;
                }
-               string[] sss = new string[recipies.Count];
+               string[] sss = new string[recipes.Count];
                for (int i = 0; i < sss.Length; i++)
                {
-                  sss[i] = recipies[i].recipieName;
+                  sss[i] = recipes[i].recipeName;
                }
                sss.ToList().OrderBy(s => s).ToArray();
                Console.WriteLine(string.Join(Environment.NewLine, sss));
-               Console.WriteLine("Above is a list of your recipies. To print one recipie, Type the name of the recipie exactally as it is spelled. To print multiple, type their names exactally as they are spelled seperated by a single space. To print all recipies, type \"ALL RECIPIES\". To go back, type \"GO BACK\".");
+               Console.WriteLine("Above is a list of your recipes. To print one recipe, Type the name of the recipe exactally as it is spelled. To print multiple, type their names exactally as they are spelled seperated by a single space. To print all recipes, type \"ALL RECIPIES\". To go back, type \"GO BACK\".");
                string cout = Console.ReadLine();
                if (cout.Trim(' ') != "ALL RECIPIES")
                {
                   string[] keys = cout.ToLower().Trim(' ').Split(' ');
-                  List<Recipie> tempp = new List<Recipie>();
+                  List<Recipe> tempp = new List<Recipe>();
                   foreach (string s in keys)
                   {
                      if (s != "")
                      {
-                        foreach (Recipie reci in recipies)
+                        foreach (Recipe reci in recipes)
                         {
-                           if (s == reci.recipieName)
+                           if (s == reci.recipeName)
                            {
                               tempp.Add(reci);
                            }
@@ -258,67 +258,67 @@ namespace Recipie_Book
                   string toPrint = string.Empty;
                   for (int i = 0; i < tempp.Count; i++)
                   {
-                     toPrint += DisplayRecipie(tempp[i], 1) + Environment.NewLine + Environment.NewLine + Environment.NewLine;
+                     toPrint += DisplayRecipe(tempp[i], 1) + Environment.NewLine + Environment.NewLine + Environment.NewLine;
                   }
-                  File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + @"\Cooking Recipies.txt", toPrint);
-                  ProcessStartInfo pi = new ProcessStartInfo(AppDomain.CurrentDomain.BaseDirectory + @"\Cooking Recipies.txt");
+                  File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + @"\Cooking Recipes.txt", toPrint);
+                  ProcessStartInfo pi = new ProcessStartInfo(AppDomain.CurrentDomain.BaseDirectory + @"\Cooking Recipes.txt");
                   pi.UseShellExecute = true;
                   pi.Verb = "print";
                   Process process = Process.Start(pi);
-                  Console.WriteLine("Print attempt made. Please type either \"Read\" or \"Write\" to read your recipies, or write them respectively. Type \"Print\" to bring up the print interface. Type \"Exit\" at any time to quit.");
-                  goto chooseReadOrWriteRecipieStart;
+                  Console.WriteLine("Print attempt made. Please type either \"Read\" or \"Write\" to read your recipes, or write them respectively. Type \"Print\" to bring up the print interface. Type \"Exit\" at any time to quit.");
+                  goto chooseReadOrWriteRecipeStart;
                }
                else if (cout.Trim(' ') != "GO BACK")
                {
                   string toPrint = string.Empty;
-                  for (int i = 0; i < recipies.Count; i++)
+                  for (int i = 0; i < recipes.Count; i++)
                   {
-                     toPrint += DisplayRecipie(recipies[i], 1) + Environment.NewLine + Environment.NewLine + Environment.NewLine;
+                     toPrint += DisplayRecipe(recipes[i], 1) + Environment.NewLine + Environment.NewLine + Environment.NewLine;
                   }
-                  File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + @"\Cooking Recipies.txt", toPrint);
-                  ProcessStartInfo pi = new ProcessStartInfo(AppDomain.CurrentDomain.BaseDirectory + @"\Cooking Recipies.txt");
+                  File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + @"\Cooking Recipes.txt", toPrint);
+                  ProcessStartInfo pi = new ProcessStartInfo(AppDomain.CurrentDomain.BaseDirectory + @"\Cooking Recipes.txt");
                   pi.UseShellExecute = true;
                   pi.Verb = "print";
                   Process process = Process.Start(pi);
-                  Console.WriteLine("Print attempt made. Please type either \"Read\" or \"Write\" to read your recipies, or write them respectively. Type \"Print\" to bring up the print interface. Type \"Exit\" at any time to quit.");
-                  goto chooseReadOrWriteRecipieStart;
+                  Console.WriteLine("Print attempt made. Please type either \"Read\" or \"Write\" to read your recipes, or write them respectively. Type \"Print\" to bring up the print interface. Type \"Exit\" at any time to quit.");
+                  goto chooseReadOrWriteRecipeStart;
                }
                else
                {
-                  Console.WriteLine("Please type either \"Read\" or \"Write\" to read your recipies, or write them respectively. Type \"Print\" to bring up the print interface. Type \"Exit\" at any time to quit.");
-                  goto chooseReadOrWriteRecipieStart;
+                  Console.WriteLine("Please type either \"Read\" or \"Write\" to read your recipes, or write them respectively. Type \"Print\" to bring up the print interface. Type \"Exit\" at any time to quit.");
+                  goto chooseReadOrWriteRecipeStart;
                }
             case "exit":
             case "quit":
                Environment.Exit(0);
                break;
             default:
-               Console.WriteLine("Error: response not recognized. Please type either \"Read\", \"Write\", or \"Print\" to read your recipies, write them, or print them respectively.");
-               goto chooseReadOrWriteRecipieStart;
+               Console.WriteLine("Error: response not recognized. Please type either \"Read\", \"Write\", or \"Print\" to read your recipes, write them, or print them respectively.");
+               goto chooseReadOrWriteRecipeStart;
          }
          Console.ReadKey();
       }
-      private static void LoadRecipies(ref List<Recipie> recipies)
+      private static void LoadRecipes(ref List<Recipe> recipes)
       {
-         if (!File.Exists(AppDomain.CurrentDomain.BaseDirectory + @"\Recipies.txt"))
+         if (!File.Exists(AppDomain.CurrentDomain.BaseDirectory + @"\Recipes.txt"))
          {
-            File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + @"\Recipies.txt", "");
+            File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + @"\Recipes.txt", "");
          }
-         string[] rawData = File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + @"\Recipies.txt").Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
-         recipies = new List<Recipie>();
+         string[] rawData = File.ReadAllText(AppDomain.CurrentDomain.BaseDirectory + @"\Recipes.txt").Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
+         recipes = new List<Recipe>();
          if (rawData.Length == 1 && rawData[0] == "")
          {
             return;
          }
          for (int i = 0; i < rawData.Length; i++)
          {
-            Recipie r = new Recipie();
+            Recipe r = new Recipe();
             string[] working = rawData[i].Split('|');
             if (working.Length == 1)
             {
                break;
             }
-            r.recipieName = working[0];
+            r.recipeName = working[0];
             List<string> ilist = new List<string>();
             int indexHolder = 0;
             for (int j = 2; j < working.Length; j++)
@@ -366,15 +366,15 @@ namespace Recipie_Book
             r.ingredientUnits = ilist.ToArray();
             r.instructions = working[working.Length - 3];
             r.serveSize = int.Parse(working[working.Length - 1]);
-            recipies.Add(r);
+            recipes.Add(r);
          }
       }
-      private static void WriteRecipies(List<Recipie> recipies)
+      private static void WriteRecipes(List<Recipe> recipes)
       {
          StringBuilder sb = new StringBuilder();
-         foreach (Recipie r in recipies)
+         foreach (Recipe r in recipes)
          {
-            sb.Append(r.recipieName + "||");
+            sb.Append(r.recipeName + "||");
             foreach (string s in r.ingredientTitles)
             {
                sb.Append(s + "|");
@@ -392,28 +392,28 @@ namespace Recipie_Book
             sb.Append("|" + r.instructions + "||" + r.serveSize);
             sb.Append(System.Environment.NewLine);
          }
-         File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + @"\Recipies.txt", sb.ToString());
+         File.WriteAllText(AppDomain.CurrentDomain.BaseDirectory + @"\Recipes.txt", sb.ToString());
       }
-      private static string DisplayRecipie(Recipie recipie, int serveMultiplier = 1)
+      private static string DisplayRecipe(Recipe recipe, int serveMultiplier = 1)
       {
          string s = string.Empty;
-         s += "---=====*" + recipie.recipieName + "*=====---" + Environment.NewLine;
-         for (int i = 0; i < recipie.ingredientAmounts.Length; i++)
+         s += "---=====*" + recipe.recipeName + "*=====---" + Environment.NewLine;
+         for (int i = 0; i < recipe.ingredientAmounts.Length; i++)
          {
-            s += recipie.ingredientTitles[i] + " :: " + (recipie.ingredientAmounts[i] * serveMultiplier) + " - (" + recipie.ingredientUnits[i] + ")" + Environment.NewLine;
+            s += recipe.ingredientTitles[i] + " :: " + (recipe.ingredientAmounts[i] * serveMultiplier) + " - (" + recipe.ingredientUnits[i] + ")" + Environment.NewLine;
          }
-         s += recipie.instructions + Environment.NewLine;
-         switch (recipie.serveSize * serveMultiplier)
+         s += recipe.instructions + Environment.NewLine;
+         switch (recipe.serveSize * serveMultiplier)
          {
             case 1:
-               s += "This recipie serves 1 person." + Environment.NewLine;
+               s += "This recipe serves 1 person." + Environment.NewLine;
                break;
             default:
-               s += "This recipie serves " + (recipie.serveSize * serveMultiplier) + " people." + Environment.NewLine;
+               s += "This recipe serves " + (recipe.serveSize * serveMultiplier) + " people." + Environment.NewLine;
                break;
          }
          s += "---======";
-         for (int i = 0; i < recipie.recipieName.Length; i++)
+         for (int i = 0; i < recipe.recipeName.Length; i++)
          {
             s += "=";
          }
@@ -423,18 +423,18 @@ namespace Recipie_Book
    }
 
 }
-struct Recipie
+struct Recipe
 {
-   //recipie formatting:recipieName||ingredientTitles[if there are multiple, they are seperated by a single "|"]||ingredientAmounts[""]||ingredientUnits[""]||instructions
-   public string recipieName;
+   //recipe formatting:recipeName||ingredientTitles[if there are multiple, they are seperated by a single "|"]||ingredientAmounts[""]||ingredientUnits[""]||instructions
+   public string recipeName;
    public string[] ingredientTitles;
    public float[] ingredientAmounts;
    public string[] ingredientUnits;
    public string instructions;
    public int serveSize;
-   public Recipie(string recipName, string instr, string[] ingrTitles, float[] ingrAmounts, string[] ingrUnits, int srv)
+   public Recipe(string recipName, string instr, string[] ingrTitles, float[] ingrAmounts, string[] ingrUnits, int srv)
    {
-      recipieName = recipName;
+      recipeName = recipName;
       instructions = instr;
       ingredientTitles = ingrTitles;
       ingredientAmounts = ingrAmounts;
